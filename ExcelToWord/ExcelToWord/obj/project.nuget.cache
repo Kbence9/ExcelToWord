@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gSPQwHhIDBQOsGekq1yHg7EGTVzO6u7nFlUfn6BLiGwNXTWt7fELZweNKuBeK5Pb7Q7ZdP9ZXkM1/2xpaeJiHQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bence\\codecool\\ExcelToWord\\ExcelToWord\\ExcelToWord\\ExcelToWord.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bence\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1001\\microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512"
+  ],
+  "logs": []
+}
