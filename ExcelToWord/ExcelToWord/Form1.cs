@@ -1,4 +1,5 @@
 using ExcelToWord.Services;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace ExcelToWord;
 
@@ -6,6 +7,7 @@ public partial class Form1 : Form
 {
     public string ExcelFile = "";
     public string WordFile = "";
+    public string Folder = "";
 
     public Form1()
     {
@@ -16,6 +18,7 @@ public partial class Form1 : Form
     {
         int size = -1;
         OpenFileDialog openFileDialog1 = new();
+        openFileDialog1.Filter = "Office Files|*.xls;*.xlsx";
         DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
         if (result == DialogResult.OK) // Test result.
         {
@@ -38,6 +41,7 @@ public partial class Form1 : Form
     {
         int size = -1;
         OpenFileDialog openFileDialog1 = new();
+        openFileDialog1.Filter = "Office Files|*.doc;*.docx";
         DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
         if (result == DialogResult.OK) // Test result.
         {
@@ -58,6 +62,19 @@ public partial class Form1 : Form
 
     private void button3_Click(object sender, EventArgs e)
     {
-        ConvertExcelToWord.ConvertFile(ExcelFile, WordFile);
+        ConvertExcelToWord.ConvertFile(ExcelFile, WordFile, Folder);
+    }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+        CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+        dialog.InitialDirectory = "C:\\Users";
+        dialog.IsFolderPicker = true;
+        if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+        {
+            Folder = dialog.FileName;
+            textBox3.Text = Folder;
+        }
+
     }
 }
